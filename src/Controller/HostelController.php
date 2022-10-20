@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HostelController extends AbstractController
 {
-    #[Route('/', name: 'app_hostel')]
+    #[Route('/', name:'app_hostel')]
     public function index(SliderRepository $repo): Response
     {
         $slider = $repo->findAll();
