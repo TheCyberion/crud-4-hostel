@@ -27,9 +27,9 @@ class CommentaireCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('prenom'),
             TextField::new('email'),
-            TextEditorField::new('description'),
+            TextEditorField::new('content'),
             IntegerField::new('note')->hideOnForm(),
-            ChoiceField::new('categorie')->setChoices([
+            ChoiceField::new('category')->setChoices([
                 'Hôtel'=>'Hôtel',
                 'Chambres'=>'Chambres',
                 'Restaurant'=>'Restaurant',
