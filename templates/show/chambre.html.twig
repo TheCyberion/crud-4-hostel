@@ -1,0 +1,117 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ chambre.titre }} {% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for slider in chambre.sliders %}
+                
+            
+            <div class="carousel-item {% if slider.ordre == 1 %} active {% endif %}">
+            <img src="{{ slider.photo }}" class="d-block w-100" alt="">
+        </div>
+            
+
+        {% endfor %}
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="row my-3">
+        <div class="titre my-2 col-md-12 text-center">
+            <h3>{{ chambre.titre }}</h3>
+        </div>
+        <div class="description col-md-12 text-justify">
+            <p>{{ chambre.descriptionlongue }}</p>
+        </div>
+
+        <div class=" col-md-8 text-center">
+        </div>
+        <div class=" col-md-2 text-end">
+            <h5>{{chambre.prixjournalier / 100|number_format(2) }}€/jours</h5>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="row">
+    {{form_start(form, {
+        attr: {
+            novalidate: 'novalidate'
+        }
+    })}}
+        <hr>
+        <div  class="col-md-12 mt-3">
+            <h3> {{chambre.titre}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        {{ form_row(form.date_arrivee) }}
+        </div>
+
+        <div class="col-md-6">
+        {{ form_row(form.date_depart) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-justify mb-3">
+            <p >cette chambre est proposée au prix de {{ chambre.prixjournalier / 100|number_format(2) }}€/jours</p>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+        <div  class="col-md-12 mt-3">
+            <h3>Saisissez vos coordonnées</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        {{ form_row(form.prenom) }}
+        </div>
+
+        <div class="col-md-6">
+        {{ form_row(form.nom) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        {{ form_row(form.telephone) }}
+        </div>
+
+        <div class="col-md-6">
+        {{ form_row(form.email) }}
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="col-md-12 btn btn-success mt-2">
+        Commander
+        </button>
+    </div>
+    
+        {{form_end(form)}}
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

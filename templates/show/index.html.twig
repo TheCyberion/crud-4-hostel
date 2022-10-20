@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShowController!{% endblock %}
+
+{% block body %}
+{# {{ form_start(form) }}
+    <h5>{{chambre.titre}}</h5>
+    <div class="row">
+    <div class="col-md-6">
+    {{ form_row(form.dateArrivee) }}
+    </div>
+    <div class="col-md-6">
+    {{ form_row(form.dateDepart) }}
+    </div>
+    </div>
+    <p>Prix à la journée : {{chambre.prixJournalier / 100|number_format(2)}}€</p>
+    
+    <div class="row">
+    <div class="col-md-6">
+    {{ form_row(form.prenom) }}
+    </div>
+    <div class="col-md-6">
+    {{ form_row(form.nom) }}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+    {{ form_row(form.telephone) }}
+    </div>
+    <div class="col-md-6">
+    {{ form_row(form.email) }}
+    </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Réserver à ces dates</button>
+
+    {{ form_end(form) }} #}
+
+{% endblock %}

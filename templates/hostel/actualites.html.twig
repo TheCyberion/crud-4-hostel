@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block body %}
+
+<table class="table">
+<thead>
+<tr>
+<th scope_"col">Titre</th>
+<th scope_"col">Titre</th>
+<th scope_"col">Titre</th>
+<th scope_"col">Titre</th>
+</tr>
+</thead>
+{% for item in rssItems %}
+    <tr class="my2">
+        <td><a href="{{item.link}}">
+        <td>{{ item.description }}</td>
+        <td>{{ item.putDate }}</td>
+    <tr>
+{% endfor %}
+</table>
+{% endblock %}        

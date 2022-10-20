@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+  <div id="carousselExempleCaptions"class="Caroussel slide caroussel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carousselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+
+    <div class="carousel-inner">
+      {% for photo in photos %}
+      {% if photo.chambre == null %}
+        <div class="carousel-item{% if photo.ordre == 1 %} active {% endif %}" data-bs-interval="3500">
+            <img src="{{photo.photo }}"class="d-block w-100" style="height:75vh; object-fit:cover;" alt="Hostel">
+            <div class="carousel-caption d-none d-md-block">
+            <h5 <a href="{{path('chambres')}}" class="btn btn-primary"> Découvrez nos chambres</a> </h5>
+           </div>
+        </div>
+      {% endif %}
+      {% endfor %}   
+    </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container my-5">
+<hr>
+  <figure class="my-5 text-center">
+  <blockquote class="blockquote">
+    <p>“De l'expérience la plus insignifiante peut naitre la plus belle des rencontres. N'attendez pas, agissez. Ne revez pas, vivez! ”</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+     Ecrivain/Developpeur <cite title="Source Title">MrCyberion</cite>
+  </figcaption>
+</figure>
+<hr>
+  <div class="row justify-content-around my-4">
+    <div class="col-lg-3 text-center my-4">
+      <img src="https://londonhousechicago.com/assets/components/phpthumbof/cache/g4.5e4da2439e9e1adc07538ce810f90b7b.jpg" class="rounded-circle img-fluid" alt="">
+      <p class="my-3">Venez découvrir des chambres qui raviront vos corps endoloris par la rudesse du quotidien</p>
+      <a href="{{path('chambres')}}" class="btn btn-primary my-2">Nos Chambres</a>
+    </div>
+    <div class="col-lg-3 text-center my-4">
+      <img src="https://kissmychef.com/wp-content/uploads/2021/07/saumon-1.png" class="rounded-circle img-fluid" alt="">
+      <p class="my-3">Nos plats, confectionnés sans attente par nos chefs cuisinier chaque jour, réjouiront vos papilles dans une farandolles de saveures</p>
+      <a href="{{path('cartes')}}" class="btn btn-primary my-2">Restaurant</a>
+    </div>
+    <div class="col-lg-3 text-center my-4">
+      <img src="https://th.bing.com/th/id/OIP.0Z4U4lSA3nVi4PeEG5BXOgHaEo?pid=ImgDet&rs=1" class="rounded-circle img-fluid" alt="">
+      <p class="my-3">Détendez-vous et offrez vous à votre corp l'attention et les soins qu'il mérite</p>
+      <a href="{{path('spas')}}" class="btn btn-primary my-2">Nos spas</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
