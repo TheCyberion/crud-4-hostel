@@ -1,12 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Avis - Hostel
+{% block title %}Avis - Hostel{% endblock %}
+
 <div class="input-group">
-  <select class="form-select
-{% endblock %}
+  
+
+
+<form action="{{path('avis_filtre')}}" method='post' class='my-5'>
+<div class="input-group">
+  <select class="form-select" id="category" name="category" aria-label="">
+    <option selected disabled>Choose...</option>
+    <option value="Hôtel">Hôtel</option>
+    <option value="Chambres">Chambres</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Spas">Spas</option>
+  </select>
+  <button class="btn btn-secondary" type="submit">filtrer</button>
+</div>
+</form>
 
 {% block body %}
-
+	
 	{% for comment in avis %}
 		<div class="comment">
 			<div class="row">
@@ -57,7 +71,7 @@
     }
 })}}
 
-		<button type="submit" class="btn btn-primary mt-2">postez un commentaire</button>
+		<button type="submit" class="btn btn-primary mt-2">postez votre commentaire</button>
 
 		{{form_end(form)}}
 	</section>
