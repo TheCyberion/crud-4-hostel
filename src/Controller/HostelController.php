@@ -26,9 +26,9 @@ class HostelController extends AbstractController
     #[Route('/chambres', name:'chambres')]
     public function chambres(ChambreRepository $repo): Response
     {
-        // $chambres = $repo->FindAll();
+         $chambres = $repo->FindAll();
         return $this->render('hostel/chambres.html.twig', [
-            // 'chambres'=>$chambres
+             'chambres'=>$chambres
         ]);
     }
 
