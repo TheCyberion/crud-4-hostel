@@ -32,7 +32,7 @@
 					{{ comment.prenom }}
 					{{ comment.nom }}
 					<br>
-					(<small>{{ comment.dateEnregistrement|date('d/m/Y à H:i:s') }}</small>)
+					(<small>{{ comment.dateEnregistrement|date('d/M/Y à H:m:s') }}</small>)
 				</div>
 				<div class="col-md-9">
 					{{ comment.content|raw }}

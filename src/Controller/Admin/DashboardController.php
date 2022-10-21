@@ -35,7 +35,7 @@ use App\Entity\Commentaire;
      public function configureDashboard(): Dashboard
      {
          return Dashboard::new()
-            ->setTitle('Hostel');
+            ->setTitle('BACKOFFICE Hostel');
      }
 
      public function configureMenuItems(): iterable
@@ -45,7 +45,6 @@ use App\Entity\Commentaire;
              MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
              MenuItem::section('Retour accueil'),
              MenuItem::linkToRoute("Accueil", 'fas fa-arrow-left', 'app_hostel'),
-             MenuItem::section('Gestion des données'),
              MenuItem::section('Commandes'),
              MenuItem::linkToCrud('Commandes', 'fas fa-hotel', Commande::class),
               MenuItem::section('Membres'),
@@ -54,7 +53,6 @@ use App\Entity\Commentaire;
              MenuItem::linkToCrud('Chambre', 'fas fa-bed', Chambre::class),
              MenuItem::section('Slider'),
              MenuItem::linktocrud('Slider', 'fas fa-images', Slider::class),
-             MenuItem::section('Commentaires'),
              MenuItem::linkToCrud('Commentaires', 'fas fa-book', Commentaire::class)
          ];            
      }
