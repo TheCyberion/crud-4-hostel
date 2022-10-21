@@ -45,15 +45,15 @@ use App\Entity\Commentaire;
              MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
              MenuItem::section('Retour accueil'),
              MenuItem::linkToRoute("Accueil", 'fas fa-arrow-left', 'app_hostel'),
-             MenuItem::section('Commandes'),
-             MenuItem::linkToCrud('Commandes', 'fas fa-hotel', Commande::class),
-              MenuItem::section('Membres'),
-              MenuItem::linkToCrud('Membres', 'fas fa-user', Membre::class),
+             MenuItem::section('Commande'),
+             MenuItem::linkToCrud('Commande', 'fas fa-hotel', Commande::class),
+              MenuItem::section('Membre'),
+              MenuItem::linkToCrud('Membre', 'fas fa-user', Membre::class),
              MenuItem::section("Chambre"),
              MenuItem::linkToCrud('Chambre', 'fas fa-bed', Chambre::class),
              MenuItem::section('Slider'),
              MenuItem::linktocrud('Slider', 'fas fa-images', Slider::class),
-             MenuItem::linkToCrud('Commentaires', 'fas fa-book', Commentaire::class)
+             MenuItem::linkToCrud('Commentaire', 'fas fa-book', Commentaire::class)
          ];            
      }
  }
